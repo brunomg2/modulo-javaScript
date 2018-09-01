@@ -12,6 +12,14 @@ produto.preco = 3.5
 
 console.log(produto)
 
+produto.preco = null //sem preco
+
+console.log(!!produto.preco)
+
+console.log(produto)
+
+//para remover um atributo de um objeto podemos utiliza delete objeto.atributo
+
 /*
 const a = {nome:'bruno'}, const b = a, ao fazermos isso
 não igualamos o valor mas sim a referencia do endereço de memoria
