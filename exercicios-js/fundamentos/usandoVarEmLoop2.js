@@ -1,0 +1,13 @@
+/**
+ * mesmo utilizando o var dentro de uma função se o seu escopo maior for um bloco os valores são sobreescritos
+ */
+const funcs = []
+for (var i = 0; i < 10; i++) {
+    
+    funcs.push(function(){
+        console.log(i)
+    })
+}
+
+funcs[2]()
+funcs[8]()
