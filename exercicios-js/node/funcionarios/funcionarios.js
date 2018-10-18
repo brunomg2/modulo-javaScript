@@ -14,6 +14,7 @@ axios.get(url).then(response => {
         .filter(filtrarSexo)
         .reduce(menorSalario)
     console.log(func)
+    //console.log(funcionarios)
 })
 
 //exercicio maior Salario
