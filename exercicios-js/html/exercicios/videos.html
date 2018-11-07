@@ -16,7 +16,7 @@
     .progresso {
         height: 20px;
         width: 500px;
-        border: 1px solid #444;
+        border:solid 1px #444;
         margin: 20px 0;
     }
 
@@ -31,15 +31,20 @@
 </style>
 
 <script>
-    const video = document.getElementById('meuVideo')
-    const play = document.querySelector('[wm-play]')
-    const pause = document.querySelector('[wm-pause]')
-    
-    play.onclick = () => {
-        video.play()
+    function configurarVideo(id) {
+        const video = document.getElementById(id)
+        video.oncontextmenu = () => false
+        document.querySelector(`[wm-play=${id}]`).onclick = () => video.play()
+        document.querySelector(`[wm-pause=${id}]`).onclick = () => video.pause()
+
+        setInterval(() => {
+            const percentual = (video.currentTime / video.duration) * 100
+            const valorDiv = document.querySelector(`[wm-progresso=${id}] > div`)
+            valorDiv.style.width = `${percentual}%`
+            valorDiv.innerHTML = `${percentual.toFixed(1)}%`
+        }, 500)
+        
     }
 
-    pause.onclick = () => {
-        video.pause()
-    }
+    configurarVideo('meuVideo')
 </script>
