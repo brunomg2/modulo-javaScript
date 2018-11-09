@@ -6,7 +6,29 @@
     <title>CSS Selectors</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        /*
+        seletores 
+            * seleciona todos os elementos
+            .nomeClasse seleciona uma tag que esta marcada com a classe .nomeClasse
+            #nomeId seleciona uma tag que esta marcado com o id especifico
+            #aninhado > div seleciona o elemento que esta diretamente dentro (filho direto)
+            #aninhado section seleciona todos os decendentes do tipo selecionado
+            p + ul seleciona o seletor que está em seguida do primeiro
+            p ~ ol seleciona os seletores que estão dentro de uma tag (tag filho)
+            [propriedade] seleciona tods os atributos que contem a propriedade
+            [feira=casa] seleciona apenas o atributo com o valor passado
+            [feira ~= escritorio] seleciona os possiveis elementos que estão separados com espaço em um atributo
+            [feira *= sa] seleciona os elementos que tem as letras em especifico
+            span:nth-child(1) seleciona uma tag filho direto de uma tag
+            section > :nth-child(odd) seleciona os filhos impares
+            section > :nth-child(even) seleciona os filhos pares
+            section > :nth-child(odd), ul, p seleciona e aplica nos elementos separados por virgula
+            section > span:nth-of-type(2) seleciona o segundo elemento dentro da section que seja o segundo elemento do tipo span
+        */
+        section > span:nth-of-type(2){
+            color: #ff0;
+            background-color: #f77;
+        }
     </style>
 </head>
 
@@ -29,7 +51,7 @@
             </ol>
             <div id='aninhado' class='tag'>
                 <div class="tag">
-                    <section class='tag'>
+                    <section class='tag nolabel'>
                         <span class='tag'>1</span>
                         <p class='tag'>2</p>
                         <span class='tag'>3</span>
