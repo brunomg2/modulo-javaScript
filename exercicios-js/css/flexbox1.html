@@ -6,7 +6,46 @@
     <title>Flexbox #01</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        .big  {
+            font-size: 1.5em;
+        }
+        .flex-container {
+            display: flex;
+            flex-direction: column;
+            flex-direction: column-reverse; /*reverte a ordem dos elementos*/
+            flex-direction: row-reverse; /*inverse a ordem e coloca os itens da direita para esquerda*/
+            flex-direction: row; /*propriedade padrão do main-axis*/
+            width: 50%;
+            height: 200px;
+            flex-wrap: wrap;
+            flex-wrap: wrap-reverse; /*quebra a linha porem invertendo a ordem*/
+            flex-flow: row wrap; /*altera a ordem e também permite quebrar ou não a linha*/
+            flex-flow: column-reverse wrap; /*padrão nowrap*/
+            flex-flow: row wrap;
+
+            justify-content: flex-start; /*justifica o conteudo no star da aplicação usando o lado esquerdo como start*/
+            justify-content: flex-end; /*justifica o conteudo no fim da aplicação usando o lado direito como base*/
+            justify-content: center; /*centraliza os items*/
+            justify-content: space-around; /*coloca um espaço igualmente para que a aplicação fique com o mesmo espaçamento*/
+            flex-direction: row-reverse;
+            justify-content: space-between; 
+
+            /* Cross Axis */
+
+            height: 400px;
+            align-items: stretch; /*padrão*/
+            align-items: baseline; /*alinha com a base da fonte*/
+            align-items: flex-start; /*alinha no topo da pagina*/ 
+            align-items: flex-end; /*alinha no final*/
+            align-items: center; /*centraliza o conteudo*/
+
+            /*mais de uma linha*/
+            align-content: flex-start;
+            align-content: flex-end;
+            align-content: center;
+            align-content: space-around;
+            align-content: space-between;
+        }
     </style>
 </head>
 
