@@ -22,7 +22,47 @@
         <p>Fim</p>
     </div>
     <script>
-        // ...
+        function log() {
+            console.log(this)
+        }
+
+        HTMLCollection.prototype.log = log
+        HTMLElement.prototype.log = log
+        NodeList.prototype.log = log
+        Node.prototype.log = log
+
+        const lista = document.querySelector('div ul')
+        lista.parentNode.log() /*pegando o elemento pai*/
+        lista.childNodes.log() /*pega os elementos filhos vem os espaços das quebras de linha*/
+
+        /*pegando o primeiro elemento*/
+        const primeiro = lista.firstChild
+        primeiro.log()
+
+        /*selecionando o proximo elemento apartir de outro*/
+        primeiro.nextSibling.log()
+
+        /*selecionando o ultimo elemento apartir de outro*/
+        const ultimo = lista.lastChild
+        ultimo.log()
+        /*pegando um elemento anterior apartir de outro*/
+        ultimo.previousSibling.log()
+
+        /*pegando todos os Nó filhos não vem os textos como no childNodes*/
+        lista.children.log()
+
+        /*pegando o primeiro elemento filho*/
+        lista.firstElementChild.log()
+
+        /*pegando o ultimo*/
+        lista.lastElementChild.log()
+
+        lista.parentNode.previousElementSibling.log()
+        lista.parentNode.nextElementSibling.log()
+
+        document.querySelectorAll('div ul li').log()
+
+
     </script>
 </body>
 
