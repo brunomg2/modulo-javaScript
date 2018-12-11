@@ -12,7 +12,17 @@
         <p>Texto Inicial</p>
     </div>
     <script>
-        // ...
+        const div = document.querySelector('div')
+        div.innerHTML = 'Texto Alterado'
+        div.classList.add('destaque')
+        //div.outerHTML = 'Texto Alterado' remove o elemento e substitui pelo valo atribuido
+        div.insertAdjacentHTML('beforebegin', '<p>Antes Início</p>')
+        div.insertAdjacentHTML('afterbegin', '<p> Depois do início </p>')
+        div.insertAdjacentHTML('beforeend', '<p>Antes Fim </p>')
+
+        //somente texto (sem tags)
+
+        console.log(div.innerText)
     </script>
 </body>
 
