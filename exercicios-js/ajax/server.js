@@ -28,5 +28,12 @@ app.post('/upload', (req, res) => {
     })
 })
 
+app.post('/formulario', (req, res) => {
+    res.send({
+        ...req.body,
+        id: 7
+    })
+})
+
 /* app.get('/teste', (req, res) => res.send('')) */
 app.listen(8080, () => console.log('Executando....'))
